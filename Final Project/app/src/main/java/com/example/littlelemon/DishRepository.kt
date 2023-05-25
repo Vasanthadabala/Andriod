@@ -2,15 +2,8 @@ package com.example.littlelemon
 
 import androidx.annotation.DrawableRes
 
-data class Dish(
-    val id: Int,
-    val name: String,
-    val description: String,
-    val price: Double,
-    @DrawableRes val imageResource: Int
-)
-
-val dishes = listOf(
+object DishRepository {
+    val dishes = listOf(
         Dish(
             1,
             "Greek Salad",
@@ -55,4 +48,13 @@ val dishes = listOf(
         )
     )
 
+    fun getDish(id: Int) = dishes.firstOrNull { it.id == id }
+}
 
+data class Dish(
+    val id: Int,
+    val name: String,
+    val description: String,
+    val price: Double,
+    @DrawableRes val imageResource: Int
+)

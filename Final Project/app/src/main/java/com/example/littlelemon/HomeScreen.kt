@@ -9,6 +9,6 @@ fun HomeScreen(navController: NavHostController) {
     Column {
         TopAppBar()
         UpperPanel()
-        LowerPanel(navController)
+        LowerPanel(navController, DishRepository.dishes)
     }
 }
